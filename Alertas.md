@@ -6,7 +6,7 @@ In order to consume the API Alarms is necessary count with certificates and perm
 
 [Gain the Work environment certificate](https://platform.bbva.com/en-us/profile/ether-credentials.html)
 
-![Image of gain work certificates](./imagenes/1-certificate-work.png)
+![Image of gain work certificates](./images/1-certificate-work.png)
 
 ### Configure certificate
 
@@ -16,7 +16,7 @@ There are many ways to do a request to an API, **Postman** and **CURL**:
 
 Go to Settings>Certificates>Add Certificate. Add the CRT file, key file and passphrase in the 3 hosts.
 
-![Image of Postman certificates](./imagenes/2-certificate-postman.png)
+![Image of Postman certificates](./images/2-certificate-postman.png)
 
 The hosts that you have to configure are (every country use the same link, just the environment chages [work, live]):
 
@@ -38,7 +38,7 @@ It is necessary to have permissions on the API in order to use it, this need to 
 
 In case you have the admin role , you can give grant users as well. (It is pre-request that you have the certificate previously installed)
 
-![Image of set permissions](./imagenes/3-set-permissions.png)
+![Image of set permissions](./images/3-set-permissions.png)
 
 | Instructions | Description |
 | ------------ | ----------- |
@@ -49,7 +49,7 @@ In case you have the admin role , you can give grant users as well. (It is pre-r
 
 ***IMPORTANT NOTE***: Assure that the bot sigma.invoker@ether.mu has the role "Writer" in the namespace. The bot update automatically the status of the alarm.
 
-![Image of set permissions to bot](./imagenes/4-set-permissions-bot.png)
+![Image of set permissions to bot](./images/4-set-permissions-bot.png)
 
 ## Alarm Receiver
 
@@ -73,8 +73,8 @@ Payload to create an Alarm Receiver:
 
 Examples:
 
-![Image of Alarm receiver slack](./imagenes/5-alarm-receiver-slack.png)
-![Image of Alarm receiver mail](./imagenes/6-alarm-receiver-mail.png)
+![Image of Alarm receiver slack](./images/5-alarm-receiver-slack.png)
+![Image of Alarm receiver mail](./images/6-alarm-receiver-mail.png)
 
 | Input parameters | Description |
 | ---------------- | ----------- |
@@ -119,7 +119,7 @@ Skeleton to create an Alarm Type:
 
 Example:
 
-![Image of Alarm type](./imagenes/7-alarm-type.png)
+![Image of Alarm type](./images/7-alarm-type.png)
 
 | Parameters | Description |
 | ---------- | ----------- |
@@ -176,8 +176,8 @@ Example of the structure of the **onWorkingHours** object that is inside the **n
 
 Example:
 
-![Image of On Working Hours 1](./imagenes/8-on-working-hours-1.png)
-![Image of On Working Hours 2](./imagenes/9-on-working-hours-2.png)
+![Image of On Working Hours 1](./images/8-on-working-hours-1.png)
+![Image of On Working Hours 2](./images/9-on-working-hours-2.png)
 
 | Parameters | Description |
 | ---------- | ----------- |
@@ -214,7 +214,7 @@ Structure to create an Alarm:
 
 Example:
 
-![Image of Alarm](./imagenes/10-alarm.png)
+![Image of Alarm](./images/10-alarm.png)
 
 | Parameters | Description |
 | ---------- | ----------- |
@@ -249,7 +249,7 @@ It is possible to change the status of the alarm manually through call the API, 
 ```
 Example:
 
-![Image of Alarm change status](./imagenes/11-alarm-change-status.png)
+![Image of Alarm change status](./images/11-alarm-change-status.png)
 
 | Parameters | Description |
 | ---------- | ----------- |
@@ -327,8 +327,8 @@ Example of the structure for a metric watcher:
 
 Example:
 
-![Image of Metric Watcher 1](./imagenes/12-metric-watcher-1.png)
-![Image of Metric Watcher 2](./imagenes/13-metric-watcher-2.png)
+![Image of Metric Watcher 1](./images/12-metric-watcher-1.png)
+![Image of Metric Watcher 2](./images/13-metric-watcher-2.png)
 
 | Parameters | Description |
 | ---------- | ----------- |
@@ -381,6 +381,6 @@ To find the locator of any resource, it is enough to request a GET to the endpoi
 
 Example endpoint: https://sigma.work.mx.ether.igrupobbva/v0/ns/com.bbva.aso/alarm-receivers
 
-![Image of Locator](./imagenes/14-locator.png)
+![Image of Locator](./images/14-locator.png)
 
 In the screenshot it show the request for all the **alarm-receivers**, per each of them it has a **_locator** related that works as a reference to it in another resource.
