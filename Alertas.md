@@ -258,6 +258,25 @@ Example:
 | **status** | Status to change the alarm. |
 | **reason** | Info to show what happened. |
 
+### Atenea Alarm Dashboard
+
+In Atenea, apart from seeing logs and span's of the executions, it is also possible to visualize the alarms associated to the namespace as well as its status, its history of changes, its configured **alarm receivers** and the monitoring information.
+
+There are two ways to view them:
+
+1. In any dashboard view: traces, metrics, logs, etc (except the alarms view); you can see in the upper right part the different statuses that they can have and indicates how many have said status.
+2. In the exclusive alarm view (alarms): This is an exclusive dashboard for alarms in which much more information can be observed than in the previous option.
+
+Below are the two ways to visualize:
+
+Option 1 and link to enter the second option:
+
+![Image of Atenea Dashboard](./images/15-atenea-dashboard.png)
+
+Option2:
+
+![Image of Alarms Dashboard](./images/16-alarms-dashboard.png)
+
 ## Metric Watcher
 
 So far we have created an alarm defining all his information necessary to work correctly. But it is necessary one automatic mechanism that updated the alarm status base on an input metric. The objective of Metric Watchers is update the alarm status.
