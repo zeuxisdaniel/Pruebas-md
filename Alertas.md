@@ -5,6 +5,7 @@
 In order to consume the API Alarms is necessary count with certificates and permissions, both of them are personal and non transferable.
 
 [Gain the Work environment certificate](https://platform.bbva.com/en-us/profile/ether-credentials.html)
+
 ![Image of gain work certificates](./imagenes/1-certificate-work.png)
 
 ###Configure certificate
@@ -19,9 +20,9 @@ Go to Settings>Certificates>Add Certificate. Add the CRT file, key file and pass
 
 The hosts that you have to configure are (every country use the same link, just the environment chages [work, live]):
 
-https://mr-tls.work.mx.ether.igrupobbva
-https://sigma.work.mx.ether.igrupobbva
-https://mu.work.mx.ether.igrupobbva
+* https://mr-tls.work.mx.ether.igrupobbva
+* https://sigma.work.mx.ether.igrupobbva
+* https://mu.work.mx.ether.igrupobbva
 
 **cURL:**
 
@@ -39,12 +40,12 @@ In case you have the admin role , you can give grant users as well. (It is pre-r
 
 ![Image of set permissions](./imagenes/3-set-permissions.png)
 
-Instructions
-------------
-**mr-url** | https://mr-tls.work.mx.ether.igrupobbva -> Specify as you wish work or live.
-**namespace-aso** | Namespace which you will grant access to a user, example: ether.pe.aso.
-**consumerId** | User that will be granted.
-**roles** | Roles assign to a user. The minimum rol that the user should be have is "Writer".
+| Instructions |
+| ------------ |
+| **mr-url** | https://mr-tls.work.mx.ether.igrupobbva -> Specify as you wish work or live. |
+| **namespace-aso** | Namespace which you will grant access to a user, example: ether.pe.aso. |
+| **consumerId** | User that will be granted. |
+| **roles** | Roles assign to a user. The minimum rol that the user should be have is "Writer". |
 
 ***IMPORTANT NOTE***: Assure that the bot sigma.invoker@ether.mu has the role "Writer" in the namespace. The bot update automatically the status of the alarm.
 
@@ -75,13 +76,13 @@ Examples:
 ![Image of Alarm receiver slack](./imagenes/5-alarm-receiver-slack.png)
 ![Image of Alarm receiver mail](./imagenes/6-alarm-receiver-mail.png)
 
-Input parameters
-----------------
-**endpoint** | The endpoint for the resource is **/alarm-receivers**
-**sigma-url** | https://sigma.work.mx.ether.igrupobbva | Check the endpoint if it is Work or Live.
-**namespace-aso** | Namespace on which the user can grant access, example: ether.pe.aso.
-**kind** | It can be SLACK or MAIL.
-**config** | It has an attribute and it can be mail for MAIL or webhook for SLACK.
+| Input parameters |
+| ---------------- |
+| **endpoint** | The endpoint for the resource is **/alarm-receivers** |
+| **sigma-url** | https://sigma.work.mx.ether.igrupobbva | Check the endpoint if it is Work or Live. |
+| **namespace-aso** | Namespace on which the user can grant access, example: ether.pe.aso. |
+| **kind** | It can be SLACK or MAIL. |
+| **config** | It has an attribute and it can be mail for MAIL or webhook for SLACK. |
 
 ##Alarm Type
 
@@ -120,15 +121,15 @@ Example:
 
 ![Image of Alarm type](./imagenes/7-alarm-type.png)
 
-Parameters
-----------
-**endpoint** | Endpoint for this resource is /alarm-types.
-**sigma-url** | https://sigma.work.mx.ether.igrupobbva change if it is live or work.
-**namespace-aso** | Namespace which will be grant access, example: ether.pe.aso.
-**propertiesSpec** | Object that receives the data in order to proceed with the Alarm.
-**notificationPolicies** | Array to configure the different Alarms Receiver. 
-**stateChangesOnly** | Flag to indicate if you want to receive the alarm when the state changes or every time that the status alarm is verified.
-**alarmReceiver** | [Locator](##locator) of alarm receiver. To know the locator for any resource we can request a GET to the endpoint and it appears as attribute inside the response.
+| Parameters |
+| ---------- |
+| **endpoint** | Endpoint for this resource is /alarm-types. |
+| **sigma-url** | https://sigma.work.mx.ether.igrupobbva change if it is live or work. |
+| **namespace-aso** | Namespace which will be grant access, example: ether.pe.aso. |
+| **propertiesSpec** | Object that receives the data in order to proceed with the Alarm. |
+| **notificationPolicies** | Array to configure the different Alarms Receiver. |
+| **stateChangesOnly** | Flag to indicate if you want to receive the alarm when the state changes or every time that the status alarm is verified. |
+| **alarmReceiver** | [Locator](##locator) of alarm receiver. To know the locator for any resource we can request a GET to the endpoint and it appears as attribute inside the response. |
 
 ###On Working Hours Configuration
 
@@ -178,11 +179,11 @@ Example:
 ![Image of On Working Hours 1](./imagenes/8-on-working-hours-1.png)
 ![Image of On Working Hours 2](./imagenes/9-on-working-hours-2.png)
 
-Parameters
-----------
-**onWorkingHours** | Object that contains the range of hours per day in which the alarm will alert.
-**mon, tue, wed, thu, fri, sat, sun** | Days of the week on which you can alert.
-**Range of hours** | Start and end time of alert. **Important**: The hours are in UTC standard, in the example above, the range is from 8:00 a.m. to 6:00 p.m. Mexico City (UTC-5). It is also possible to define several ranges in the same day, for more information consult: https://platform.bbva.com/en-us/developers/sigma/documentation/api/v0#content17
+| Parameters |
+| ---------- |
+| **onWorkingHours** | Object that contains the range of hours per day in which the alarm will alert. |
+| **mon, tue, wed, thu, fri, sat, sun** | Days of the week on which you can alert. |
+| **Range of hours** | Start and end time of alert. **Important**: The hours are in UTC standard, in the example above, the range is from 8:00 a.m. to 6:00 p.m. Mexico City (UTC-5). It is also possible to define several ranges in the same day, for more information consult: https://platform.bbva.com/en-us/developers/sigma/documentation/api/v0#content17 |
 
 ##Alarm
 
@@ -215,17 +216,17 @@ Example:
 
 ![Image of Alarm](./imagenes/10-alarm.png)
 
-Parameters
-----------
-**endpoint** | The endpoint for this resource is **/alarms**
-**sigma-url** | https://sigma.work.mx.ether.igrupobbva It can be work or live.
-**namespace-aso** | Namespace to be granted for the user, example: ether.pe.aso.
-**monitoredResource** | [Locator](##locator) of monitored resource. This value always is the same.
-**enabled** | Enable or disable the alarm.
-**alarmType** | [Locator](##locator) of alarm type. To know the locator of any resource, send a GET request to the endpoint to get the resource and it appears as an attribute inside the response.
-**properties** | Object that specify the values of the differents attributes that previously it was defined in the Alarm Type. The information you defined will be showing in the Atenea Console.
+| Parameters |
+| ---------- |
+| **endpoint** | The endpoint for this resource is **/alarms** |
+| **sigma-url** | https://sigma.work.mx.ether.igrupobbva It can be work or live. |
+| **namespace-aso** | Namespace to be granted for the user, example: ether.pe.aso. |
+| **monitoredResource** | [Locator](##locator) of monitored resource. This value always is the same. |
+| **enabled** | Enable or disable the alarm. |
+| **alarmType** | [Locator](##locator) of alarm type. To know the locator of any resource, send a GET request to the endpoint to get the resource and it appears as an attribute inside the response. |
+| **properties** | Object that specify the values of the differents attributes that previously it was defined in the Alarm Type. The information you defined will be showing in the Atenea Console. |
 
-###Alarma status
+###Alarm status
 
 The alarm can be in 4 states while her the life cycle:
 
@@ -250,12 +251,12 @@ Example:
 
 ![Image of Alarm change status](./imagenes/11-alarm-change-status.png)
 
-Parameters
-----------
-**endpoint** | The endpoint is **/alarms/{{alarmId}}:setStatus**
-**namespace-aso** | Namespace to grant access to the user, example: ether.pe.aso.
-**status** | Status to change the alarm.
-**reason** | Info to show what happened.
+| Parameters |
+| ---------- |
+| **endpoint** | The endpoint is **/alarms/{{alarmId}}:setStatus** |
+| **namespace-aso** | Namespace to grant access to the user, example: ether.pe.aso. |
+| **status** | Status to change the alarm. |
+| **reason** | Info to show what happened. |
 
 ##Metric Watcher
 
@@ -329,29 +330,29 @@ Example:
 ![Image of Metric Watcher 1](./imagenes/12-metric-watcher-1.png)
 ![Image of Metric Watcher 2](./imagenes/13-metric-watcher-2.png)
 
-Parameters
-----------
-**endpoint** | The endpoint for this resource is **/metric-watchers**
-**mu-url** | https://mu.work.mx.ether.igrupobbva Depends on the environment: work or live
-**namespace-aso** | Namespace which will grant access to the user, example: ether.pe.aso.
-**kind** | OPERATION as the name said, it means an arithmetic operation (sum, min, max, mean and count).
-**window** |  Object that define the space time and when the watcher will be monitoring the metric.
-**period** | Value in seconds that the Watcher will be monitoring the metric.
-**every** | Value in seconds that the Watcher will be waiting until it start to monitor again.
-**metricSetType** | It is the [Locator](##locator) of metric set type.
-**metricSource** | Object that specify the metric to watch and where you define the filter over you want to apply the monitoring.
-**metricSetKey** | Name of the metric to watch.
-**operation** | Operation that will be applied once the threshold of metric was reached.
-**filters** | Object that contains the different filters that are necessary to get a concrete result from the monitoring. The values can be whatever field that appears on SEMaaS.
-**enabled** | Enable or disable the watcher.
-**alarm** | [Locator](##locator) of the alarm to inform when the conditions specified occurs. The Watcher update the status to the alarm.
-**actions** | Array that defines the conditions and the status that involved the metric setted.
-**conditionKind** | Logical Statement that is evaluated against the **metricSource** to determine what will be the actions to aplies. The values can be =, >=, <=, !=.
-**threshold** | Value that define when the status will be changed based on the **metricSource** result.
-**thresholdReset** | Value that need to be reached to reset the status of the alarm based on the result of **metricSource**.
-**statusCode** | Status to be updated if the condition is accomplished.
-**statusDuration** | Duration in seconds where the **threshold** can be reached.
-**resetStatusDuration** | Duration in seconds where the **thresholdReset** can be reached.
+| Parameters |
+| ---------- |
+| **endpoint** | The endpoint for this resource is **/metric-watchers** |
+| **mu-url** | https://mu.work.mx.ether.igrupobbva Depends on the environment: work or live |
+| **namespace-aso** | Namespace which will grant access to the user, example: ether.pe.aso. |
+| **kind** | OPERATION as the name said, it means an arithmetic operation (sum, min, max, mean and count). |
+| **window** |  Object that define the space time and when the watcher will be monitoring the metric. |
+| **period** | Value in seconds that the Watcher will be monitoring the metric. |
+| **every** | Value in seconds that the Watcher will be waiting until it start to monitor again. |
+| **metricSetType** | It is the [Locator](##locator) of metric set type. |
+| **metricSource** | Object that specify the metric to watch and where you define the filter over you want to apply the monitoring. |
+| **metricSetKey** | Name of the metric to watch. |
+| **operation** | Operation that will be applied once the threshold of metric was reached. |
+| **filters** | Object that contains the different filters that are necessary to get a concrete result from the monitoring. The values can be whatever field that appears on SEMaaS. |
+| **enabled** | Enable or disable the watcher. |
+| **alarm** | [Locator](##locator) of the alarm to inform when the conditions specified occurs. The Watcher update the status to the alarm. |
+| **actions** | Array that defines the conditions and the status that involved the metric setted. |
+| **conditionKind** | Logical Statement that is evaluated against the **metricSource** to determine what will be the actions to aplies. The values can be =, >=, <=, !=. |
+| **threshold** | Value that define when the status will be changed based on the **metricSource** result. |
+| **thresholdReset** | Value that need to be reached to reset the status of the alarm based on the result of **metricSource**. |
+| **statusCode** | Status to be updated if the condition is accomplished. |
+| **statusDuration** | Duration in seconds where the **threshold** can be reached. |
+| **resetStatusDuration** | Duration in seconds where the **thresholdReset** can be reached. |
 
 ##Live environment Settings
 
@@ -361,18 +362,18 @@ https://globaldevtools.bbva.com/jira/servicedesk/customer/portal/26/create/332
 
 The configuration of the certificates is done in the same way as in work, the only thing that changes are the endpoints where it is pointed:
 
-https://mr.live.mx.nextgen.igrupobbva
-https://sigma.live.mx.nextgen.igrupobbva
-https://mu.live.mx.nextgen.igrupobbva
+* https://mr.live.mx.nextgen.igrupobbva
+* https://sigma.live.mx.nextgen.igrupobbva
+* https://mu.live.mx.nextgen.igrupobbva
 
 ***IMPORTANT NOTE***: Ensure that the sigma.invoker@ether.mu bot has a "Writer" role in the namespace. The bot automatically updates the status of an alarm.
 
 ##References
 
-https://platform.bbva.com/en-us/developers/sigma/documentation/01-what-is
-https://platform.bbva.com/en-us/developers/sigma/documentation/api/v0
-https://platform.bbva.com/en-us/developers/mu/documentation/01-what-is
-https://platform.bbva.com/en-us/developers/mu/documentation/api/v0
+* https://platform.bbva.com/en-us/developers/sigma/documentation/01-what-is
+* https://platform.bbva.com/en-us/developers/sigma/documentation/api/v0
+* https://platform.bbva.com/en-us/developers/mu/documentation/01-what-is
+* https://platform.bbva.com/en-us/developers/mu/documentation/api/v0
 
 ##Locator
 
