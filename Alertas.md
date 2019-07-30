@@ -129,7 +129,7 @@ Example:
 | **propertiesSpec** | Object that receives the data in order to proceed with the Alarm. |
 | **notificationPolicies** | Array to configure the different Alarms Receiver. |
 | **stateChangesOnly** | Flag to indicate if you want to receive the alarm when the state changes or every time that the status alarm is verified. |
-| **alarmReceiver** | [Locator](##locator) of alarm receiver. To know the locator for any resource we can request a GET to the endpoint and it appears as attribute inside the response. |
+| **alarmReceiver** | [Locator](#locator) of alarm receiver. To know the locator for any resource we can request a GET to the endpoint and it appears as attribute inside the response. |
 
 ### On Working Hours Configuration
 
@@ -221,9 +221,9 @@ Example:
 | **endpoint** | The endpoint for this resource is **/alarms** |
 | **sigma-url** | https://sigma.work.mx.ether.igrupobbva It can be work or live. |
 | **namespace-aso** | Namespace to be granted for the user, example: ether.pe.aso. |
-| **monitoredResource** | [Locator](##locator) of monitored resource. This value always is the same. |
+| **monitoredResource** | [Locator](#locator) of monitored resource. This value always is the same. |
 | **enabled** | Enable or disable the alarm. |
-| **alarmType** | [Locator](##locator) of alarm type. To know the locator of any resource, send a GET request to the endpoint to get the resource and it appears as an attribute inside the response. |
+| **alarmType** | [Locator](#locator) of alarm type. To know the locator of any resource, send a GET request to the endpoint to get the resource and it appears as an attribute inside the response. |
 | **properties** | Object that specify the values of the differents attributes that previously it was defined in the Alarm Type. The information you defined will be showing in the Atenea Console. |
 
 ### Alarm status
@@ -339,13 +339,13 @@ Example:
 | **window** |  Object that define the space time and when the watcher will be monitoring the metric. |
 | **period** | Value in seconds that the Watcher will be monitoring the metric. |
 | **every** | Value in seconds that the Watcher will be waiting until it start to monitor again. |
-| **metricSetType** | It is the [Locator](##locator) of metric set type. |
+| **metricSetType** | It is the [Locator](#locator) of metric set type. |
 | **metricSource** | Object that specify the metric to watch and where you define the filter over you want to apply the monitoring. |
 | **metricSetKey** | Name of the metric to watch. |
 | **operation** | Operation that will be applied once the threshold of metric was reached. |
 | **filters** | Object that contains the different filters that are necessary to get a concrete result from the monitoring. The values can be whatever field that appears on SEMaaS. |
 | **enabled** | Enable or disable the watcher. |
-| **alarm** | [Locator](##locator) of the alarm to inform when the conditions specified occurs. The Watcher update the status to the alarm. |
+| **alarm** | [Locator](#locator) of the alarm to inform when the conditions specified occurs. The Watcher update the status to the alarm. |
 | **actions** | Array that defines the conditions and the status that involved the metric setted. |
 | **conditionKind** | Logical Statement that is evaluated against the **metricSource** to determine what will be the actions to aplies. The values can be =, >=, <=, !=. |
 | **threshold** | Value that define when the status will be changed based on the **metricSource** result. |
